@@ -1,0 +1,26 @@
+<div class="logo">
+</div>
+
+<div class="titulo">
+  <h2>One Piece Quiz</h2>
+</div>
+
+<body>
+
+  <div class="conteudo-jogo">
+    <section class="questionario">
+      <div class="conteudo">
+        <span class="progresso"></span>
+        <span class="pergunta"></span>
+        <div class="respostas"></div>
+      </div>
+
+      <div class="fim">
+        <span></span>
+        <div class="botoes-finais">
+          <button class="botao-final" onclick="recomecarQuiz()">🔁 Recomeçar</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
