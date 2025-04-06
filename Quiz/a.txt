@@ -1,0 +1,38 @@
+function jogar() {
+const idade = parseInt(prompt("Qual a sua idade?"));
+if (idade < 18) {
+    alert("Você é menor de idade!");
+} else {
+    while (true) {
+        const opcoes = ["pedra", "papel", "tesoura"];
+        const escolhaJogador = parseInt(prompt("Digite: \n1 - Pedra \n2 - Papel \n3 - Tesoura"));
+
+        if (escolhaJogador < 1 || escolhaJogador > 3 || isNaN(escolhaJogador)) {
+            alert("Escolha inválida! Tente novamente.");
+            continue;
+        }
+
+        const escolhaComputador = Math.floor(Math.random() * 3); // Gera um número entre 0 e 2
+
+        alert(`Você escolheu ${opcoes[escolhaJogador - 1]} e o computador escolheu ${opcoes[escolhaComputador]}.`);
+
+        if (escolhaJogador - 1 === escolhaComputador) {
+            alert("Empate!");
+        } else if (
+            (escolhaJogador === 1 && escolhaComputador === 2) || // Pedra perde para papel
+            (escolhaJogador === 2 && escolhaComputador === 3) || // Papel perde para tesoura
+            (escolhaJogador === 3 && escolhaComputador === 1)    // Tesoura perde para pedra
+        ) {
+            alert("Você ganhou!");
+        } else {
+            alert("Você perdeu!");
+        }
+
+        const jogarNovamente = prompt("Deseja jogar novamente? (s/n)").toLowerCase();
+        if (jogarNovamente !== "s") {
+            alert("Obrigado por jogar!");
+            break;
+        }
+    }
+  }
+}
